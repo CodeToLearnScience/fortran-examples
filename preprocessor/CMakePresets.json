@@ -1,0 +1,77 @@
+{
+	"version": 3,
+	"configurePresets": [
+		{
+			"architecture": "x64",
+			"binaryDir": "${sourceDir}/build/Windows/Debug",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_C_COMPILER": "cl.exe",
+				"CMAKE_CXX_COMPILER": "cl.exe",
+				"CMAKE_Fortran_COMPILER": "mpiifort",
+				"CMAKE_Fortran_FLAGS_DEBUG": "/nologo /debug:full /Od /fpp /warn:all /traceback /check:all /c",
+				"CMAKE_INSTALL_PREFIX": "${sourceDir}/build/Windows/Debug",
+				"CMAKE_TRY_COMPILE_TARGET_TYPE": "STATIC_LIBRARY"
+			},
+			"cmakeExecutable": "C:\\Program Files\\CMake\\bin\\cmake.exe",
+			"description": "Using compilers for Visual Studio 16 2019 (x64 architecture)",
+			"displayName": "Windows x64 Debug",
+			"generator": "Visual Studio 16 2019",
+			"name": "Windows_Debug",
+			"toolset": "host=x64"
+		},
+		{
+			"architecture": "x64",
+			"binaryDir": "${sourceDir}/build/Windows/Release",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Release",
+				"CMAKE_C_COMPILER": "cl.exe",
+				"CMAKE_CXX_COMPILER": "cl.exe",
+				"CMAKE_Fortran_COMPILER": "mpiifort",
+				"CMAKE_Fortran_FLAGS_DEBUG": "/nologo /debug:minimal /O2 /fpp /traceback /check:bounds /c",
+				"CMAKE_INSTALL_PREFIX": "${sourceDir}/build/Windows/Release",
+				"CMAKE_TRY_COMPILE_TARGET_TYPE": "STATIC_LIBRARY"
+			},
+			"cmakeExecutable": "C:\\Program Files\\CMake\\bin\\cmake.exe",
+			"description": "Using compilers for Visual Studio 16 2019 (x64 architecture)",
+			"displayName": "Windows x64 Release",
+			"generator": "Visual Studio 16 2019",
+			"name": "Windows_Release",
+			"toolset": "host=x64"
+		},
+		{
+			"binaryDir": "${sourceDir}/build/Linux/Debug",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Debug",
+				"CMAKE_C_COMPILER": "/usr/bin/gcc",
+				"CMAKE_CXX_COMPILER": "/usr/bin/g++",
+				"CMAKE_Fortran_COMPILER": "/opt/intel/oneapi/mpi/latest/bin/mpiifort",
+				"CMAKE_Fortran_FLAGS_DEBUG": "-nologo -g -debug all -no-pie -check all -warn all -g3 -O0 -fpp -fpe-all=0 -fp-stack-check -fstack-protector-all -ftrapuv -no-ftz -extend-source 132 -gen-interfaces -init:zero,arrays -traceback -threads -macro=no",
+				"CMAKE_INSTALL_PREFIX": "${sourceDir}/build/Linux/Debug",
+				"CMAKE_TRY_COMPILE_TARGET_TYPE": "STATIC_LIBRARY"
+			},
+			"cmakeExecutable": "/usr/bin/cmake",
+			"description": "Using compilers: gcc, g++, ifort",
+			"displayName": "GCC 9.4.0 x86_64-linux-gnu",
+			"generator": "Ninja",
+			"name": "Linux_Debug"
+		},
+		{
+			"binaryDir": "${sourceDir}/build/Linux/Release",
+			"cacheVariables": {
+				"CMAKE_BUILD_TYPE": "Release",
+				"CMAKE_C_COMPILER": "/usr/bin/gcc",
+				"CMAKE_CXX_COMPILER": "/usr/bin/g++",
+				"CMAKE_Fortran_COMPILER": "/opt/intel/oneapi/mpi/latest/bin/mpiifort",
+				"CMAKE_Fortran_FLAGS_RELEASE": "-nologo -g -debug minimal -O2 -fpp -ftz -extend-source 132 -threads",
+				"CMAKE_INSTALL_PREFIX": "${sourceDir}/build/Linux/Release",
+				"CMAKE_TRY_COMPILE_TARGET_TYPE": "STATIC_LIBRARY"
+			},
+			"cmakeExecutable": "/usr/bin/cmake",
+			"description": "Using compilers: gcc, g++, ifort",
+			"displayName": "GCC 9.4.0 x86_64-linux-gnu",
+			"generator": "Ninja",
+			"name": "Linux_Release"
+		}
+	]
+}
