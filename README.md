@@ -1,2 +1,2 @@
 # fortran-examples
-Fortran examples 
+Simple Fortran examples for quick reference. 
