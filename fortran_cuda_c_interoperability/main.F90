@@ -5,9 +5,9 @@ interface c_cuda
   subroutine array_sum_func(N, host_array, tot_sum) bind(C,name='array_sum')
     import c_int, c_ptr, c_double
     implicit none 
-    integer(kind=c_int), value :: N
-    type(c_ptr), value :: host_array 
-    real(c_double) :: tot_sum 
+    integer(kind=c_int), intent(in), value :: N
+    type(c_ptr), intent(in), value :: host_array 
+    real(c_double), intent(out) :: tot_sum 
   end subroutine array_sum_func 
 end interface c_cuda 
 end module c_interface_func
@@ -32,7 +32,7 @@ program test_fortran_c_interoperability
 
   call array_sum_func(nx, c_loc(a), sum)
 
-  print*, "Sum of array computing from C function: ", sum 
+  print*, "Sum of array computed from CUDA kernerl (called from Fortran): ", sum 
 end program test_fortran_c_interoperability 
 
 

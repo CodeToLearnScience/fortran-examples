@@ -28,7 +28,7 @@ program test_fortran_c_interoperability
 
   sum = array_sum(c_loc(a), nx)
 
-  print*, "Sum of array computing from C function: ", sum 
+  print*, "Sum of array computed from C function (called from Fortran): ", sum 
 end program test_fortran_c_interoperability 
 
 
