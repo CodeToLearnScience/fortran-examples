@@ -11,7 +11,7 @@ arg1="$1"
 cc=gcc
 cf=gfortran
 
-if [ $arg1 == "intel" ]; then 
+if [[ $arg1 == "intel" ]]; then 
   printf "Compiling with Intel compilers\n"
   cc=icc 
   cf=ifort
@@ -26,8 +26,9 @@ printf "This example shows how to call c function from fortran. We use shared \
 library for linking...\n"
 printf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%\n"
 
-$cc array_sum.c -c -fPIC
-$cc array_sum.o -shared -o libarraysum.so
+$cc array_sum.c sum_two_arrays.c -c -fPIC
+$cc array_sum.o sum_two_arrays.o -shared -o libarraysum.so
+$cf mod_fortran_c_interface.F90 -c -fPIC
 export LD_LIBRARY_PATH=$PWD:$LD_LIBRARY_PATH 
 $cc main.c -L. -larraysum -o test_c.out
 $cf main.F90 -L. -larraysum -o test_c_from_fortran.out
@@ -44,9 +45,11 @@ printf "The following lines show static linking of c and fortran code. Here \
 we call c function from fortran...\n"
 
 $cc -c array_sum.c -o array_sum.o
+$cc -c sum_two_arrays.c -o sum_two_arrays.o
+$cf -c mod_fortran_c_interface.F90
 $cf -c main.F90 -o main_f.o
 #-lc for linking c-lib and -lstdc++ for c++
-$cf main_f.o array_sum.o -o test_c_from_fortran_stat_link.out -lc 
+$cf main_f.o array_sum.o sum_two_arrays.o -o test_c_from_fortran_stat_link.out -lc 
 printf "Running program from fortran code which calls c function \
 (static linking)\n"
 ./test_c_from_fortran_stat_link.out
