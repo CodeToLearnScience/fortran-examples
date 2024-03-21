@@ -1,3 +1,6 @@
 a.out
 build
 *.mod
+*.smod
+*.i90
+*.o
