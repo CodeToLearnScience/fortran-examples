@@ -5,5 +5,7 @@ Simple Fortran examples for quick reference.
   a. Shows how to compile using Intel MKL via CMake
 3. Fortran-C interoperability
 4. Fortran-CUDA interoperability
+5. Fortran Submodule
+
    
 
