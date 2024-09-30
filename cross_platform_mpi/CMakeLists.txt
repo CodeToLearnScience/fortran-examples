@@ -5,7 +5,7 @@ project(CrossPlatformFromVS VERSION 0.1)
 enable_language(Fortran)
 find_package(MPI REQUIRED)
 include_directories(${MPI_Fortran_INCLUDE_PATH})
-
+set(CMAKE_Fortran_PREPROCESS ON)
 if(WIN32)
 	set(CMAKE_Fortran_COMPILER "%install_path%/Intel/oneAPI/compiler/2022.1.0/windows/bin/intel64/ifort.exe")
 endif(WIN32)
