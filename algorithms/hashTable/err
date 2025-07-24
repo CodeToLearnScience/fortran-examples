@@ -1,0 +1,30 @@
+ex5.f90:343:24:
+
+  343 |   type(DictIntLog) :: dl
+      |                        1
+Error: Unexpected data declaration statement at (1)
+ex5.f90:344:15:
+
+  344 |   logical :: lv
+      |               1
+Error: Unexpected data declaration statement at (1)
+ex5.f90:346:9:
+
+  346 |   call dl%put(5, .true.)
+      |         1
+Error: VARIABLE attribute of ‘dl’ conflicts with PROCEDURE attribute at (1)
+ex5.f90:347:9:
+
+  347 |   call dl%get(5, lv, found)
+      |         1
+Error: VARIABLE attribute of ‘dl’ conflicts with PROCEDURE attribute at (1)
+ex5.f90:345:4:
+
+  345 |   dl = new_DictIntLog(8)
+      |    1
+Error: Symbol ‘dl’ at (1) has no IMPLICIT type; did you mean ‘di’?
+ex5.f90:348:31:
+
+  348 |   if (found) print *, '5->', lv
+      |                               1
+Error: Symbol ‘lv’ at (1) has no IMPLICIT type; did you mean ‘v’?

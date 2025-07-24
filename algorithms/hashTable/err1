@@ -1,0 +1,15 @@
+c_ex1_mod.f90:29:25:
+
+   29 |     generic :: get_int => get_int32, get_int64
+      |                         1
+Error: ‘value_get_int32’ and ‘value_get_int64’ for GENERIC ‘get_int’ at (1) are ambiguous
+c_ex1_mod.f90:30:26:
+
+   30 |     generic :: get_real => get_real32, get_real64
+      |                          1
+Error: ‘value_get_real32’ and ‘value_get_real64’ for GENERIC ‘get_real’ at (1) are ambiguous
+c_ex1_mod.f90:169:33:
+
+  169 |     if (this%type_code == 5 .and. this%array_ptr /= c_null_ptr) then
+      |                                 1
+Error: Operands of comparison operator ‘/=’ at (1) are TYPE(c_ptr)/TYPE(c_ptr)

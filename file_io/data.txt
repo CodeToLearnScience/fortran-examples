@@ -1,0 +1,2 @@
+ 149       3             0                       3.2815000e+02    2.2315000e+02    5.2315000e+02    O-Ring 6x1_1, (steel_bolts_65)
+ cat , dog,monkey , donkey   , horse
